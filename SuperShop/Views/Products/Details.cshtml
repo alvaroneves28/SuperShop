@@ -34,10 +34,9 @@
         </div>
 
         <div class="col-md-4 text-center">
-            @if (!string.IsNullOrEmpty(Model.ImageUrl))
-            {
-                <img src="@Url.Content(Model.ImageUrl)" alt="Image" class="img-fluid" style="max-height:450px;" />
-            }
+            
+                <img src="@Url.Content(Model.ImageFullPath)" alt="Image" class="img-fluid" style="max-height:450px;" />
+            
         </div>
     </div>
 </div>

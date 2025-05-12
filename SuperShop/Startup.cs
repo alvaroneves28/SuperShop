@@ -8,6 +8,12 @@ using Microsoft.Extensions.Hosting;
 using SuperShop.Data;
 using SuperShop.Data.Entities;
 using SuperShop.Helpers;
+using System;
+using Microsoft.Extensions.Azure;
+using Azure.Data.Tables;
+using Azure.Storage.Queues;
+using Azure.Storage.Blobs;
+using Azure.Core.Extensions;
 
 namespace SuperShop
 {
@@ -42,8 +48,9 @@ namespace SuperShop
             services.AddTransient<SeedDb>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IUserHelper, UserHelper>();
-            services.AddScoped<IImageHelper, ImageHelper>();
+            services.AddScoped<IBlobHelper, BlobHelper>();
             services.AddScoped<IConverterHelper,ConverterHelper>();
+            
 
             services.AddControllersWithViews();
         }

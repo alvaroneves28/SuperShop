@@ -8,6 +8,8 @@ namespace SuperShop.Models
     {
         [Display(Name ="Image")]
         public IFormFile ImageFile { get; set; }
-        public object ImgageFile { get; internal set; }
+
+        public string ImageUrl { get; set; }
+
     }
 }
