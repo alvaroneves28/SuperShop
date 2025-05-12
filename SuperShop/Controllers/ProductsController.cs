@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SuperShop.Data;
 using SuperShop.Data.Entities;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace SuperShop.Controllers
 {
+    
     public class ProductsController : Controller
     {
         
@@ -51,6 +53,7 @@ namespace SuperShop.Controllers
         }
 
         // GET: Products/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -82,8 +85,9 @@ namespace SuperShop.Controllers
             return View(model);
         }
 
-        
+
         // GET: Products/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
