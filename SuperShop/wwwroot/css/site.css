@@ -69,3 +69,345 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+/* Forbidden Page */
+/*-------------------*/
+
+body-forbidden {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 1.3rem;
+}
+
+    body-forbidden h1 {
+        font-size: 2.5rem;
+    }
+
+.message {
+    max-width: 700px;
+    margin: 5rem auto 0 auto;
+}
+
+.gandalf {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    top: 1rem;
+    animation: floating 1s infinite alternate ease-in-out;
+}
+
+    .gandalf::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 400px;
+        height: 400px;
+        background-color: #1a2130;
+        border-radius: 50%;
+    }
+
+.fireball {
+    position: absolute;
+    bottom: -10px;
+    left: 50px;
+    width: 300px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(#EFAC41, #DE8531, #6C1305, black);
+    border: 5px solid #000;
+}
+
+.skirt {
+    position: absolute;
+    bottom: 50px;
+    left: 100px;
+    border-bottom: 230px solid #ededed;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    filter: drop-shadow(0 0 6px #cccccc);
+}
+
+.sleeves::before,
+.sleeves::after {
+    content: "";
+    position: absolute;
+    border-bottom: 70px solid #ededed;
+    filter: drop-shadow(0 0 6px #cccccc);
+}
+
+.sleeves::before {
+    top: 130px;
+    left: 191px;
+    border-left: 100px solid transparent;
+    border-right: 40px solid transparent;
+    transform: rotate(-34deg);
+}
+
+.sleeves::after {
+    top: 127px;
+    left: 70px;
+    border-left: 40px solid transparent;
+    border-right: 100px solid transparent;
+    transform: rotate(41deg);
+}
+
+.shoulders {
+    position: absolute;
+    background-color: #ededed;
+    border-radius: 50%;
+    width: 100px;
+    height: 130px;
+    left: 150px;
+    top: 120px;
+}
+
+.hand {
+    width: 33px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #ffd8ad;
+    position: absolute;
+    top: -6px;
+}
+
+    .hand.left {
+        left: -70px;
+        transform: rotate(-20deg);
+    }
+
+    .hand.right {
+        right: -70px;
+        transform: rotate(20deg);
+    }
+
+        .hand.right::after {
+            content: "";
+            position: absolute;
+            background-color: #bf5507; /* Staff color */
+            width: 250px;
+            height: 5px;
+            border-radius: 2.5px;
+            transform: rotate(-78deg);
+            transform-origin: left;
+            bottom: -100px;
+            left: 0;
+        }
+
+    .hand.left::after {
+        content: "";
+        position: absolute;
+        background-color: #e6e6e6; /* Sword color */
+        width: 126px;
+        height: 8px;
+        border-radius: 4px;
+        transform: rotate(-105deg);
+        transform-origin: bottom;
+        top: -48px;
+        left: -56px;
+    }
+
+.head {
+    position: absolute;
+    width: 80px;
+    height: 90px;
+    top: 80px;
+    left: 160px;
+    background-color: #ffd8ad;
+    border-radius: 50%;
+}
+
+    .head::before,
+    .head::after {
+        content: "";
+        position: absolute;
+        background-color: #000;
+        width: 13px;
+        height: 5px;
+        border-radius: 3px;
+    }
+
+    .head::before {
+        top: 42px;
+        left: 22px;
+        transform: rotate(19deg);
+    }
+
+    .head::after {
+        top: 42px;
+        right: 22px;
+        transform: rotate(-19deg);
+    }
+
+.hair {
+    position: absolute;
+    width: 70px;
+    height: 30px;
+    background-color: #c2beb5;
+    border-radius: 50%;
+    top: 0px;
+    left: 5px;
+}
+
+    .hair::before,
+    .hair::after {
+        content: "";
+        position: absolute;
+        background-color: #c2beb5;
+        filter: drop-shadow(2px 5px 0 #a19e95);
+    }
+
+    .hair::before {
+        left: -16px;
+        width: 25px;
+        height: 100px;
+        border-top-left-radius: 34px;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 20px;
+        transform: rotate(8deg);
+    }
+
+    .hair::after {
+        right: -16px;
+        width: 25px;
+        height: 100px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 34px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 100px;
+        transform: rotate(-10deg);
+    }
+
+.beard {
+    position: absolute;
+    top: 64px;
+    left: 5px;
+    border-top: 80px solid #c2beb5;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-radius: 30px;
+    filter: drop-shadow(2px 5px 0 #a19e95);
+}
+
+    .beard::before {
+        content: "";
+        position: absolute;
+        background-color: pink;
+        width: 20px;
+        height: 5px;
+        border-radius: 40%;
+        top: -70px;
+        left: -9px;
+    }
+
+@keyframes floating {
+    to {
+        top: 1.5rem;
+    }
+}
+
+
+/* Page Not Found 404*/
+/*--------------------*/
+
+.error-page {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    background-color: #000000;
+    background-image: radial-gradient(#11581E, #041607), url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Inconsolata', Helvetica, sans-serif;
+    font-size: 1.5rem;
+    color: rgba(128, 255, 128, 0.8);
+    text-shadow: 0 0 1ex rgba(51, 255, 51, 1), 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+    .error-page .noise {
+        pointer-events: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+        opacity: 0.02;
+    }
+
+    .error-page .overlay {
+        pointer-events: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: repeating-linear-gradient( 180deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100% );
+        background-size: auto 4px;
+        z-index: 1;
+    }
+
+        .error-page .overlay::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient( 0deg, transparent 0%, rgba(32, 128, 32, 0.2) 2%, rgba(32, 128, 32, 0.8) 3%, rgba(32, 128, 32, 0.2) 3%, transparent 100% );
+            background-repeat: no-repeat;
+            animation: scan 7.5s linear infinite;
+        }
+
+@keyframes scan {
+    0% {
+        background-position: 0 -100vh;
+    }
+
+    35%, 100% {
+        background-position: 0 100vh;
+    }
+}
+
+.error-page .terminal {
+    position: relative;
+    width: 1000px;
+    max-width: 100%;
+    padding: 4rem;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.error-page .output {
+    color: rgba(128, 255, 128, 0.8);
+    text-shadow: 0 0 1px rgba(51, 255, 51, 0.4), 0 0 2px rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+}
+
+    .error-page .output::before {
+        content: "> ";
+    }
+
+.error-page a.notfound-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+    .error-page a.notfound-link::before {
+        content: "[";
+    }
+
+    .error-page a.notfound-link::after {
+        content: "]";
+    }
+
+.error-page .errorcode {
+    color: white;
+}
+
