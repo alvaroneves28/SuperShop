@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using SuperShop.Data;
 using SuperShop.Data.Entities;
 using SuperShop.Models;
 using System.Threading.Tasks;
@@ -10,12 +12,14 @@ namespace SuperShop.Helpers
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly DataContext _context;
 
-        public UserHelper(UserManager<User> userManager, SignInManager<User> signInManager, RoleManager<IdentityRole> roleManager)
+        public UserHelper(UserManager<User> userManager, SignInManager<User> signInManager, RoleManager<IdentityRole> roleManager, DataContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
+            _context = context;
         }
 
         public async Task<IdentityResult> AddUserAsync(User user, string password)
@@ -47,7 +51,9 @@ namespace SuperShop.Helpers
 
         public async Task<User> GetUserByEmailAsync(string email)
         {
-            return await _userManager.FindByEmailAsync(email);
+            return await _context.Users
+            .Include(u => u.City)
+            .FirstOrDefaultAsync(u => u.Email == email);
         }
 
         public async Task<bool> IsUserInRoleAsync(User user, string roleName)
