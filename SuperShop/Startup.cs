@@ -51,6 +51,8 @@ namespace SuperShop
             services.AddScoped<IBlobHelper, BlobHelper>();
             services.AddScoped<IConverterHelper,ConverterHelper>();
             services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<ICountryRepository, CountryRepository>();
+
 
             services.ConfigureApplicationCookie(options =>
             {

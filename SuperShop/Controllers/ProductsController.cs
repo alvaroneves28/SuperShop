@@ -15,7 +15,6 @@ namespace SuperShop.Controllers
     
     public class ProductsController : Controller
     {
-        
         private readonly IProductRepository _productRepository;
         private readonly IUserHelper _userHelper;
         private readonly IBlobHelper _blobHelper;
@@ -82,7 +81,6 @@ namespace SuperShop.Controllers
             }
             return View(model);
         }
-
 
         // GET: Products/Edit/5
         [Authorize]
