@@ -33,6 +33,8 @@ namespace SuperShop
         {
             services.AddIdentity<User, IdentityRole>(cfg =>
             {
+                cfg.Tokens.AuthenticatorTokenProvider = TokenOptions.DefaultAuthenticatorProvider;
+                cfg.SignIn.RequireConfirmedEmail = true;
                 cfg.User.RequireUniqueEmail = true;
                 cfg.Password.RequireDigit = false;
                 cfg.Password.RequiredUniqueChars = 0;
@@ -40,7 +42,7 @@ namespace SuperShop
                 cfg.Password.RequireUppercase = false;
                 cfg.Password.RequireNonAlphanumeric = false;
                 cfg.Password.RequiredLength = 6;
-            }).AddEntityFrameworkStores<DataContext>();
+            }).AddDefaultTokenProviders().AddEntityFrameworkStores<DataContext>();
 
             services.AddAuthentication().AddCookie().AddJwtBearer(cfg =>
             {
@@ -62,6 +64,8 @@ namespace SuperShop
             services.AddScoped<IUserHelper, UserHelper>();
             services.AddScoped<IBlobHelper, BlobHelper>();
             services.AddScoped<IConverterHelper,ConverterHelper>();
+            services.AddScoped<IMailHelper, MailHelper>();
+
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<ICountryRepository, CountryRepository>();
 
