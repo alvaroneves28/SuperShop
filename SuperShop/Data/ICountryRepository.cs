@@ -26,5 +26,7 @@ namespace SuperShop.Data
         IEnumerable<SelectListItem> GetComboCities(int countryId);
 
         Task<Country> GetCountryAsync(City city);
+
+       
     }
 }
